@@ -1,0 +1,33 @@
+<div class="chartContainer">
+    <div class="header">
+        <img src="assets/plant.png" alt="logo">
+        <h1 class="caption">WATER EASY</h1>  
+    </div>
+    <div class="line-chart">
+      <canvas 
+        baseChart width="400" height="400"
+        [datasets]="lineChartData"
+        [labels]="lineChartLabels"
+        [options]="lineChartOptions"
+        [colors]="lineChartColors"
+        [legend]="lineChartLegend"
+        [chartType]="lineChartType"
+        ></canvas>
+        <button style="visibility: hidden" id="dataButton" (click)='randomize()'>Click</button>
+        <button style="visibility: hidden" id="socketButton" (click)='socketData()'>Socket</button>
+    </div>
+    <div class="sensor-data">
+            Humidity: {{latestHumidity}} g/m^3
+            <br>
+            <br>
+            Temperature (C): {{latestTempertature}} C
+            <br>
+            <br>
+            Soil Moisture: {{latestSoil}} 
+            <br>
+            <br>
+            Light: {{latestLight}} mW/cm^2
+            <br>
+            <br>  
+    </div>
+</div>
